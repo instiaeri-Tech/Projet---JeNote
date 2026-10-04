@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "JeNote",
+    "slug": "jenote",
+    "scheme": "jenote",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jenote.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "JeNote utilise le microphone pour capturer vos situations et créer des notes audio.",
+        "NSCameraUsageDescription": "JeNote utilise la caméra pour lire vos notes et documents avec l’OCR.",
+        "NSPhotoLibraryUsageDescription": "JeNote utilise vos photos pour extraire du texte avec l’OCR."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+      ,"package": "com.jenote.app",
+      "permissions": ["RECORD_AUDIO", "CAMERA", "READ_MEDIA_IMAGES"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-audio"
+    ]
+  }
+}

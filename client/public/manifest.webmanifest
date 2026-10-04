@@ -1,0 +1,11 @@
+{
+  "name": "JeNote — le carnet linguistique vivant",
+  "short_name": "JeNote",
+  "description": "Transformez vos situations réelles en compétences linguistiques utiles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#182331",
+  "orientation": "portrait-primary",
+  "icons": [{"src":"/logo.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

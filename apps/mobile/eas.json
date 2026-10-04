@@ -1,0 +1,13 @@
+{
+  "cli": { "version": ">= 16.0.0" },
+  "build": {
+    "preview": { "distribution": "internal" },
+    "production": { "autoIncrement": true }
+  },
+  "submit": {
+    "production": {
+      "android": { "serviceAccountPath": "./google-service-account.json", "track": "production" },
+      "ios": { "ascAppId": "REPLACE_WITH_APP_STORE_CONNECT_APP_ID" }
+    }
+  }
+}
