@@ -8,10 +8,11 @@ import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, Pressable, Sa
 type User = { id: number; name: string | null; email: string | null };
 type Note = { id: string; text: string; context: string; target: string; createdAt: string; source: 'text' | 'audio' | 'ocr' };
 type Tab = 'today' | 'carnet' | 'practice' | 'talk' | 'account';
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://3000-i962yidtzxxzaoolt8ij7-044f5ed7.us4.manus.computer';
+// EXPO_PUBLIC_API_URL is embedded at build time. Never fall back to an ephemeral preview host.
+const API_URL = (process.env.EXPO_PUBLIC_API_URL || 'https://projet-jenote.onrender.com').replace(/\/+$/, '');
 
 async function api<T>(path: string, options?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`, { ...options, headers: { 'Content-Type': 'application/json', ...(options?.headers || {}) } });
+  const response = await fetch(`${API_URL}${path}`, { ...options, credentials: options?.credentials ?? 'include', headers: { 'Content-Type': 'application/json', ...(options?.headers || {}) } });
   const body = await response.json();
   if (!response.ok) throw new Error(body.message || 'Une erreur est survenue.');
   return body;

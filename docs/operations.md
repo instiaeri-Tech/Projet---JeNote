@@ -39,3 +39,5 @@ curl -fsS http://localhost:${PORT:-3000}/manus-routes.json
 ```
 
 Avant un checkpoint, vérifier le statut du serveur, la compatibilité mobile, les cookies `webdev_app_session`, les permissions, l’absence de secrets dans `git diff` et la présence de `.env.example`.
+
+Pour les comptes locaux utilisés par l’application native, configurer `JENOTE_AUTH_SECRET` avec une valeur aléatoire forte dans l’environnement Render avant d’accepter de vrais utilisateurs. Le code conserve actuellement une valeur de repli de développement si cette variable manque ; ne pas laisser cette configuration en production. Toute rotation de ce secret invalide les sessions existantes.

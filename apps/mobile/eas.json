@@ -1,8 +1,18 @@
 {
   "cli": { "version": ">= 16.0.0" },
   "build": {
-    "preview": { "distribution": "internal" },
-    "production": { "autoIncrement": true }
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://projet-jenote.onrender.com"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://projet-jenote.onrender.com"
+      }
+    }
   },
   "submit": {
     "production": {
